@@ -1,0 +1,86 @@
+ItemEvents.rightClicked("kubejs:guard_summoner", event=>{ //you could just replace this item id with any item id like "minecraft:iron_ingot".
+
+    
+    let player = event.player
+    event.server.runCommandSilent(`/clear ${player.name.getString()} kubejs:guard_summoner 1`)
+    let x = player.x
+    let y = player.y
+    let z = player.z
+
+    for (let i = 0; i < 3; i++) {//you could get the same effect with vanilla command blocks by just putting everything after this line that is within a "event.server.runCommandSilent(``)" in a few command blocks
+            event.server.runCommandSilent(`/summon guardvillagers:guard ${x} ${y} ${z} {
+            Tags:["guardfbi"],
+            PersistenceRequired:1b,
+            CanPickUpLoot:0b,
+            AngerTime:999999,
+            HandItems:[{id:"jeg:combat_rifle",Count:1b},{}],
+            ArmorItems:[
+                {id:"minecraft:iron_boots",Count:1b},
+                {id:"minecraft:iron_leggings",Count:1b},
+                {id:"minecraft:iron_chestplate",Count:1b},
+                {id:"minecraft:iron_helmet",Count:1b}
+            ],
+            Attributes:[
+                {Name:"minecraft:follow_range",Base:128.0}
+            ] 
+            }`
+            )
+        }
+        //2 assult rifles
+        for (let i = 0; i < 2; i++) {
+            event.server.runCommandSilent(`/summon guardvillagers:guard ${x} ${y} ${z} {
+            Tags:["guardfbi"],
+            PersistenceRequired:1b,
+            CanPickUpLoot:0b,
+            AngerTime:999999,
+            HandItems:[{id:"jeg:pump_shotgun",Count:1b},{}],
+            ArmorItems:[
+                {id:"minecraft:iron_boots",Count:1b},
+                {id:"minecraft:iron_leggings",Count:1b},
+                {id:"minecraft:iron_chestplate",Count:1b},
+                {id:"minecraft:iron_helmet",Count:1b}
+            ],
+            Attributes:[
+                {Name:"minecraft:follow_range",Base:128.0}
+            ] 
+            }`
+            )
+        }
+        //1 flamethrower one
+        event.server.runCommandSilent(`/summon guardvillagers:guard ${x} ${y} ${z} {
+            Tags:["guardfbi"],
+            PersistenceRequired:1b,
+            CanPickUpLoot:0b,
+            AngerTime:999999,
+            HandItems:[{id:"jeg:flamethrower",Count:1b},{}],
+            ArmorItems:[
+                {id:"minecraft:iron_boots",Count:1b},
+                {id:"minecraft:iron_leggings",Count:1b},
+                {id:"minecraft:iron_chestplate",Count:1b},
+                {id:"minecraft:iron_helmet",Count:1b}
+            ],
+            Attributes:[
+                {Name:"minecraft:follow_range",Base:128.0}
+            ] 
+            }`
+            )
+        for (let i = 0; i < 2; i++) {
+            event.server.runCommandSilent(`/summon guardvillagers:guard ${x} ${y} ${z} {
+            Tags:["guardfbi"],
+            PersistenceRequired:1b,
+            AngerTime:999999,
+            HandItems:[{id:"minecraft:diamond_axe",Count:1b},{id:"minecraft:ender_pearl"}],
+            ArmorItems:[
+                {id:"minecraft:iron_boots",Count:1b},
+                {id:"minecraft:iron_leggings",Count:1b},
+                {id:"minecraft:iron_chestplate",Count:1b},
+                {id:"minecraft:iron_helmet",Count:1b}
+            ],
+            Attributes:[
+                {Name:"minecraft:follow_range",Base:128.0}
+            ] 
+            }`
+            )
+        }
+    
+})
